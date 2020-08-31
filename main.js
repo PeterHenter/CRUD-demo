@@ -1,6 +1,6 @@
 const localUrl = "http://localhost:3000/users";
 const remoteUrl = "https://my-json-server.typicode.com/PeterHenter/CRUD-demo";
-const remoteUrl2 = "https://json.extendsclass.com/bin/57df05e23082/users";
+const remoteUrl2 = "https://json.extendsclass.com/bin/57df05e23082";
 
 const userKeys = ["id", "name", "email"];
 
