@@ -1,19 +1,19 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "John Smith",
-      "email": "JSmith@aol.com"
+      "email": "JSmith@aol.com",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Lucy East",
-      "email": "LucyWest78@gmail.com"
+      "name": "Lucy West",
+      "email": "LucyWest78@gmail.com",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Leo Davis",
-      "email": "Leo_Davis@hotmail.com"
+      "email": "Leo_Davis@hotmail.com",
+      "id": 3
     },
     {
       "id": 4,

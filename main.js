@@ -1,11 +1,14 @@
-const url = "http://localhost:3000/users";
+const localUrl = "http://localhost:3000/users";
+const remoteUrl = "https://my-json-server.typicode.com/PeterHenter/CRUD-demo";
+
+const userKeys = ["id", "name", "email"];
 
 //Get the user data from the server
 function getServerData(url) {
     let fetchOptions = {
         method: "GET",
-        mode: "cors",
-        cache: "no-cache"
+        //mode: "no-cors",
+        //cache: "no-cache"
     };
 
     return fetch(url, fetchOptions).then(
@@ -25,7 +28,7 @@ function createAnyElement(element, attributes) {
 }
 
 function populateRowWithUserData(tableRow, dataObject) {
-    for (key in dataObject) {
+    for (key of userKeys) {
         let newCell = document.createElement("td");
         newCell.innerHTML = dataObject[key];
         tableRow.appendChild(newCell);
@@ -47,12 +50,12 @@ function saveChanges(callingButton) {
     //Update the data on the server
     let fetchOptions = {
         method: "PUT",
-        //mode: "cors",
+        mode: "cors",
         //cache: "no-cache",
         headers: { 'Content-Type': 'application/json' },
         body: userData
     }
-    fetch(url+`/${index}`, fetchOptions).then(populateUserTable);
+    fetch(localUrl+`/${index}`, fetchOptions).then(response => response.json);
 
     console.log(userData);
 
@@ -116,10 +119,9 @@ function populateTableBody(table, dataObjectArray) {
 }
 
 function populateUserTable() {
-    //let url = "http://localhost:3000/users";
     let userTable = document.querySelector("#userTable");
 
-    getServerData(url).then(
+    getServerData(remoteUrl).then(
         data => populateTableBody(userTable, data)
     );
 }
