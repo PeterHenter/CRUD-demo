@@ -126,6 +126,5 @@ async function populateUserTable() {
         data => populateTableBody(userTable, data)
     );*/
     let data = await getServerData(remoteUrl2);
-   //populateUserTable(userTable, data);
-   console.log(data);
+    populateUserTable(userTable, data);
 }
