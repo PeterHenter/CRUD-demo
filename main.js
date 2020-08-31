@@ -1,5 +1,6 @@
 const localUrl = "http://localhost:3000/users";
 const remoteUrl = "https://my-json-server.typicode.com/PeterHenter/CRUD-demo";
+const remoteUrl2 = "https://json.extendsclass.com/bin/f7febc4dfa96";
 
 const userKeys = ["id", "name", "email"];
 
@@ -55,7 +56,7 @@ function saveChanges(callingButton) {
         headers: { 'Content-Type': 'application/json' },
         body: userData
     }
-    fetch(localUrl+`/${index}`, fetchOptions).then(response => response.json);
+    fetch(remoteUrl2+`/${index}`, fetchOptions).then(response => response.json);
 
     console.log(userData);
 
@@ -121,7 +122,7 @@ function populateTableBody(table, dataObjectArray) {
 function populateUserTable() {
     let userTable = document.querySelector("#userTable");
 
-    getServerData(remoteUrl).then(
+    getServerData(remoteUrl2).then(
         data => populateTableBody(userTable, data)
     );
 }
