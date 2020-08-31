@@ -9,7 +9,7 @@ function getServerData(url) {
     let fetchOptions = {
         method: "GET",
         mode: "cors",
-        //cache: "no-cache"
+        cache: "no-cache"
     };
 
     return fetch(url, fetchOptions).then(
