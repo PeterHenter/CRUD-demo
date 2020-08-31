@@ -7,7 +7,7 @@ const userKeys = ["id", "name", "email"];
 function getServerData(url) {
     let fetchOptions = {
         method: "GET",
-        //mode: "no-cors",
+        mode: "no-cors",
         //cache: "no-cache"
     };
 
