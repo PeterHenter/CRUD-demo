@@ -56,7 +56,7 @@ function saveChanges(callingButton) {
         headers: { 'Content-Type': 'application/json' },
         body: userData
     }
-    fetch(remoteUrl2+`/${index}`, fetchOptions).then(response => response.json);
+    fetch(remoteUrl2 + `/${index}`, fetchOptions).then(response => response.json);
 
     console.log(userData);
 
@@ -79,7 +79,7 @@ function makeRowEditable(button) {
     }
 
     //Change the clicked on Edit button to a Save button.
-    let saveButton = createAnyElement("button", { type: "button", class: "btn btn-success", onclick:"saveChanges(this)"});
+    let saveButton = createAnyElement("button", { type: "button", class: "btn btn-success", onclick: "saveChanges(this)" });
     let saveButtonIcon = createAnyElement("i", { class: "fas fa-check" });
     saveButton.appendChild(saveButtonIcon);
     button.replaceWith(saveButton);
@@ -119,10 +119,12 @@ function populateTableBody(table, dataObjectArray) {
     }
 }
 
-function populateUserTable() {
+async function populateUserTable() {
     let userTable = document.querySelector("#userTable");
 
-    getServerData(remoteUrl2).then(
+    /*getServerData(localUrl).then(
         data => populateTableBody(userTable, data)
-    );
+    );*/
+    let data = await getServerData(remoteUrl2);
+    populateUserTable(userTable, data);
 }
