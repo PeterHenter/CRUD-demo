@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "email": "JSmith@aol.com"
+    },
+    {
+      "id": 2,
+      "name": "Lucy East",
+      "email": "LucyWest78@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Leo Davis",
+      "email": "Leo_Davis@hotmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Natasha Golding",
+      "email": "goldie83@outlook.com"
+    }
+  ]
+}
