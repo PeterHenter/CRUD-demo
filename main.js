@@ -111,7 +111,7 @@ function populateTableBody(table, dataObjectArray) {
         //tableBody = table.appendChild(blankTableBody);
     }
 
-    for (dataObject of dataObjectArray) {
+    for (let dataObject of dataObjectArray) {
         let newRow = document.createElement("tr");
         populateRowWithUserData(newRow, dataObject);
         addButtonsToTheRow(newRow);
