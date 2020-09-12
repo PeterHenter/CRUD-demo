@@ -1,6 +1,5 @@
 const localUrl = "http://localhost:3000/users";
-const remoteUrl = "https://my-json-server.typicode.com/PeterHenter/CRUD-demo";
-const remoteUrl2 = "https://json.extendsclass.com/bin/57df05e23082";
+const remoteUrl = "https://jsoncrudbackend.herokuapp.com/users";
 
 const userKeys = ["id", "name", "email"];
 
@@ -56,7 +55,7 @@ function saveChanges(callingButton) {
         headers: { 'Content-Type': 'application/json' },
         body: userData
     }
-    fetch(remoteUrl2 + `/${index}`, fetchOptions).then(response => response.json);
+    fetch(remoteUrl + `/${index}`, fetchOptions).then(response => response.json);
 
     console.log(userData);
 
@@ -125,6 +124,6 @@ async function populateUserTable() {
     /*getServerData(localUrl).then(
         data => populateTableBody(userTable, data)
     );*/
-    let data = await getServerData(remoteUrl2);
+    let data = await getServerData(remoteUrl);
     populateTableBody(userTable, data);
 }
